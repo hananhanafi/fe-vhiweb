@@ -32,7 +32,7 @@ const routes = [
       component: () => import('../views/Users/Detail.vue'),
     },
     {
-      path: '/:catchAll(.*)*',
+      path: '/:pathMatch(.*)*',
       name: "PageNotFound",
       component: () => import('../views/404.vue'),    },
   ]
