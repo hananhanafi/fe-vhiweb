@@ -1,21 +1,15 @@
 // import Vue from 'vue';
 import Vuex from 'vuex';
-import { users } from './modules/users/index';
+import { auth } from './modules/auth/index';
 import { RootState } from './types';
-
-// Vue.use(Vuex);
+import createPersistedState from "vuex-persistedstate";
 
 export default new Vuex.Store<RootState>({
   state: {
     version: '1.0.0',
   },
   modules: {
-    users,
+    auth
   },
-  mutations: {
-
-  },
-  actions: {
-
-  },
+  plugins: [createPersistedState()],
 });

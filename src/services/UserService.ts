@@ -1,6 +1,6 @@
 import Service, { serializeQuery } from './index';
 
-class UserAPI {
+class UserService {
     async getUserList(params: any){
         return new Promise(async(resolve,reject)=>{
             const endpoint = `/users?${serializeQuery(params)}`;
@@ -13,9 +13,9 @@ class UserAPI {
             });
         })
     }
-    async getUserDetail(params: any){
+    async getUserDetail(id: number){
         return new Promise(async(resolve,reject)=>{
-            const endpoint = `/users/${params.id}`;
+            const endpoint = `/users/${id}`;
             await Service.get(endpoint)
             .then((res)=>{
                 resolve(res);
@@ -27,4 +27,4 @@ class UserAPI {
     }
 }
 
-export default new UserAPI;
+export default new UserService;

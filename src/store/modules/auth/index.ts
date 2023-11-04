@@ -6,13 +6,15 @@ import { ResultState } from './types';
 import { RootState } from '../../types';
 
 export const state: ResultState = {
-  data: {},
+  data: {
+    token: ''
+  },
   error: false,
 };
 
 const namespaced: boolean = true;
 
-export const users: Module<ResultState, RootState> = {
+export const auth: Module<ResultState, RootState> = {
   namespaced,
   state,
   getters,
