@@ -18,9 +18,9 @@ instance.interceptors.response.use(function (response) {
     // Do something with response error
     const errorCode = error.response.status
     if(errorCode === 404) {
-        toast.error("Data not found.");
-    } else {
-        toast.error("Something went wrong.");
+        toast.error("Data not found");
+    } else if (errorCode >= 500) {
+        toast.error("Something went wrong");
     }
     return Promise.reject(error);
 });

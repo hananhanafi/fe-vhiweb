@@ -24,4 +24,9 @@ const vuetify = createVuetify({
   
 const app = createApp(App);
 app.config.globalProperties.$rules = rules
-app.use(router).use(store).use(vuetify).use(Toast).mount('#app')
+app.use(router).use(store).use(vuetify)
+app.use(Toast, {
+    transition: "Vue-Toastification__bounce",
+    newestOnTop: true
+});
+app.mount('#app')
